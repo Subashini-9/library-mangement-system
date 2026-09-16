@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Library Management System</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f3f6fa;
+    color:#263238;
+}
+
+button{
+    cursor:pointer;
+}
+
+.hidden{
+    display:none !important;
+}
+
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+#loginPage{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#263238,#546e7a);
+}
+
+.login-box{
+    width:380px;
+    max-width:90%;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    text-align:center;
+}
+
+.login-icon{
+    font-size:60px;
+    margin-bottom:10px;
+}
+
+.login-box h1{
+    margin-bottom:8px;
+}
+
+.login-box p{
+    color:#777;
+    margin-bottom:25px;
+}
+
+.login-box input{
+    width:100%;
+    padding:13px;
+    margin-bottom:13px;
+    border:1px solid #ccc;
+    border-radius:7px;
+    outline:none;
+}
+
+.login-box input:focus{
+    border-color:#1976d2;
+}
+
+.login-btn{
+    width:100%;
+    padding:13px;
+    background:#263238;
+    color:white;
+    border:0;
+    border-radius:7px;
+    font-size:16px;
+}
+
+.login-btn:hover{
+    background:#455a64;
+}
+
+.demo-login{
+    margin-top:18px;
+    padding:10px;
+    background:#f1f1f1;
+    border-radius:6px;
+    font-size:13px;
+    color:#555;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    height:65px;
+    background:#263238;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 25px;
+}
+
+header h1{
+    font-size:22px;
+}
+
+.admin-area{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.admin-name{
+    font-size:14px;
+}
+
+.logout-btn{
+    background:#d32f2f;
+    border:0;
+    color:white;
+    padding:9px 15px;
+    border-radius:6px;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+#app{
+    display:none;
+}
+
+.layout{
+    display:flex;
+    min-height:calc(100vh - 65px);
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    width:230px;
+    background:#37474f;
+    color:white;
+    padding-top:15px;
+    flex-shrink:0;
+}
+
+.sidebar-title{
+    padding:15px 20px;
+    font-size:13px;
+    color:#cfd8dc;
+    text-transform:uppercase;
+}
+
+.nav-btn{
+    width:100%;
+    padding:15px 20px;
+    background:transparent;
+    border:0;
+    color:white;
+    text-align:left;
+    font-size:15px;
+}
+
+.nav-btn:hover,
+.nav-btn.active{
+    background:#263238;
+}
+
+.nav-btn span{
+    margin-right:10px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+    flex:1;
+    padding:25px;
+    overflow-x:auto;
+}
+
+.section{
+    display:none;
+}
+
+.section.active{
+    display:block;
+}
+
+.page-title{
+    margin-bottom:20px;
+}
+
+.page-title h2{
+    margin-bottom:5px;
+}
+
+.page-title p{
+    color:#777;
+}
+
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.card-icon{
+    font-size:28px;
+}
+
+.card p{
+    color:#777;
+    margin-top:10px;
+}
+
+.card h2{
+    font-size:30px;
+    margin-top:8px;
+}
+
+
+/* =========================
+   BOX
+========================= */
+
+.box{
+    background:white;
+    padding:22px;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    margin-bottom:22px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:15px;
+}
+
+input,
+select{
+    width:100%;
+    padding:11px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+}
+
+input:focus,
+select:focus{
+    bor
